@@ -18,6 +18,7 @@ import time
 import urllib2
 import tempfile
 import os
+import ssl
 from urlparse import urlsplit
 #import cookielib
 
@@ -485,7 +486,7 @@ template')
             # Establish connection
             try:
                 data = urllib2.urlopen(request,
-                                       timeout=config_pytomo.URL_TIMEOUT)
+                                       timeout=config_pytomo.URL_TIMEOUT, context=ssl.createunverifiedcontext()))
                 #data = opener.open(request)
                 break
             except (urllib2.HTTPError, ), err:
