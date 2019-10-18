@@ -486,7 +486,7 @@ template')
             # Establish connection
             try:
                 data = urllib2.urlopen(request,
-                                       timeout=config_pytomo.URL_TIMEOUT, context=ssl.createunverifiedcontext()))
+                                       timeout=config_pytomo.URL_TIMEOUT, context=ssl._create_unverified_context())
                 #data = opener.open(request)
                 break
             except (urllib2.HTTPError, ), err:
@@ -499,7 +499,7 @@ template')
                     try:
                         # Open the connection again without the range header
                         data = urllib2.urlopen(basic_request,
-                                               timeout=config_pytomo.URL_TIMEOUT)
+                                               timeout=config_pytomo.URL_TIMEOUT, context=ssl._create_unverified_context())
                         #data = opener.open(basic_request)
                     except (urllib2.HTTPError, ), err:
                         if err.code < 500 or err.code >= 600:
