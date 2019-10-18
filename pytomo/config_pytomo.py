@@ -89,7 +89,7 @@ STD_HEADERS = {
 # for start_pytomo.py
 
 STATIC_URL_LIST = []
-INPUT_FILE = "video_urls.txt"
+INPUT_FILE = "pytomo/video_urls.txt"
 
 # Max number of rounds to perform
 MAX_ROUNDS = 2
