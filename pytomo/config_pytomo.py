@@ -13,7 +13,7 @@ USE_PACKAGE_DIR = False
 
 # execute crawl without prompting user for any parameters
 # put to True if you are running jobs automatically
-BATCH_MODE = False
+BATCH_MODE = True
 
 #PROVIDER = None
 PROVIDER = ''
@@ -44,8 +44,8 @@ CENTRALISE_DATA = False
 CENTRALISATION_SERVER = 'pytomo.dtdns.net'
 
 # loop on input links
-LOOP = False
-#LOOP = True
+#LOOP = False
+LOOP = True
 
 # take related links
 RELATED = True
@@ -89,15 +89,15 @@ STD_HEADERS = {
 # for start_pytomo.py
 
 STATIC_URL_LIST = []
-INPUT_FILE = None
+INPUT_FILE = "video_urls.txt"
 
 # Max number of rounds to perform
-MAX_ROUNDS = 10000
-MAX_CRAWLED_URLS = 10000
+MAX_ROUNDS = 2
+MAX_CRAWLED_URLS = 10000000
 # Max number of related videos from each url
-MAX_PER_URL = 10
+MAX_PER_URL = 9
 # Max number of related videos from each page
-MAX_PER_PAGE = 10
+MAX_PER_PAGE = 9
 
 # timeframe for the most popular videos fetch at start of crawl
 # put 'today', 'week', 'month' or 'all_time' (default case)
@@ -105,7 +105,7 @@ MAX_PER_PAGE = 10
 TIME_FRAME = 'today'
 
 #Time delay between consecutive url crawls and download requests (in seconds)
-DELAY_BETWEEN_REQUESTS = 10
+DELAY_BETWEEN_REQUESTS = 5
 # Max duration of round for getting input links
 MAX_ROUND_DURATION = 600
 
@@ -133,9 +133,11 @@ PROXIES = None
 # other DNS servers to query
 GOOGLE_PUBLIC_DNS = ('google_public_dns', '8.8.8.8')
 OPEN_DNS = ('open_dns', '208.67.220.220')
+# adding cloudflase as it does not use EDNS
+CLOUDFLARE_PUBLIC_DNS = ('cloudflare_public_dns', '1.1.1.1') 
 # The lifetime of a DNS query(in seconds). The default is 30 seconds.
 DNS_TIMEOUT = 4.0
-EXTRA_NAME_SERVERS = [GOOGLE_PUBLIC_DNS, OPEN_DNS]
+EXTRA_NAME_SERVERS = [GOOGLE_PUBLIC_DNS, OPEN_DNS, CLOUDFLARE_PUBLIC_DNS]
 #EXTRA_NAME_SERVERS = []
 # also download video from IPs resolved by other DNS servers
 DOWNLOAD_FROM_EXTRA_IPS = False
@@ -178,7 +180,7 @@ PING_PACKETS = 10
 DOWNLOAD_TIME = 30.0
 FREQ_FULL_DOWNLOAD = None
 #FREQ_FULL_DOWNLOAD = 40
-MAX_DOWNLOAD_TIME = 600.0
+MAX_DOWNLOAD_TIME = 30.0 # can be igrnored if DOWNLOAD_TIME > 0 ele this is a default value
 INITIAL_BUFFER = 2.0
 MIN_PLAYOUT_BUFFER = 0.1
 MIN_PLAYOUT_RESTART = 1.0
