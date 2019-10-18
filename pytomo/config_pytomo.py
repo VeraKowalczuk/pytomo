@@ -105,7 +105,7 @@ MAX_PER_PAGE = 9
 TIME_FRAME = 'today'
 
 #Time delay between consecutive url crawls and download requests (in seconds)
-DELAY_BETWEEN_REQUESTS = 5
+DELAY_BETWEEN_REQUESTS = 10
 # Max duration of round for getting input links
 MAX_ROUND_DURATION = 600
 
