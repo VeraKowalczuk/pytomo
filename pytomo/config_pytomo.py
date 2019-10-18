@@ -34,7 +34,7 @@ LOG_FILE = 'pytomo.log'
 
 # log level
 # choose from: DEBUG, INFO, WARNING, ERROR and CRITICAL
-LOG_LEVEL = DEBUG
+LOG_LEVEL = INFO
 
 # log the public IP address
 LOG_PUBLIC_IP = True
