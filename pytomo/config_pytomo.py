@@ -95,9 +95,9 @@ INPUT_FILE = "pytomo/video_urls.txt"
 MAX_ROUNDS = 2
 MAX_CRAWLED_URLS = 10000000
 # Max number of related videos from each url
-MAX_PER_URL = 9
+MAX_PER_URL = 10
 # Max number of related videos from each page
-MAX_PER_PAGE = 9
+MAX_PER_PAGE = 10
 
 # timeframe for the most popular videos fetch at start of crawl
 # put 'today', 'week', 'month' or 'all_time' (default case)
