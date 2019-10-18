@@ -44,8 +44,8 @@ CENTRALISE_DATA = False
 CENTRALISATION_SERVER = 'pytomo.dtdns.net'
 
 # loop on input links
-#LOOP = False
-LOOP = True
+LOOP = False
+#LOOP = True
 
 # take related links
 RELATED = True
